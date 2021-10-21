@@ -293,7 +293,7 @@ html, body{
     padding: 0.5%;
     text-align: center;
   }
-  
+
   .center{
     text-align: center;
   }
@@ -317,3 +317,7 @@ html, body{
   #icon {
     width:20%;
   }
+
+  .info-links{
+    text-align: center;
+}

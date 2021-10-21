@@ -1,0 +1,30 @@
+/* root */
+
+/* tags <> */
+
+/* classes . */
+.info-box-spliter{
+    text-align: center;
+    color: yellow;
+    background-color: red;
+
+}
+
+.info-row{
+    display: flex;
+    border-bottom: 2px solid black;
+}
+
+.info-row-header{
+    flex-basis: 75px;
+}
+
+.info-row p li{
+    margin: 1%;
+}
+
+/* ids # */
+#info-box{
+    border: 2px solid black;
+    width: 30%;
+}
