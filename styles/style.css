@@ -286,6 +286,8 @@ html, body{
   .topnav{
     text-align: center;
     color: var(--nav-color) !important;;
+    position: sticky;
+    top: 0;
 
   }
 
@@ -321,3 +323,7 @@ html, body{
   .info-links{
     text-align: center;
 }
+
+  .Header{
+    border-bottom: #0d0d0d 1%;
+  }
