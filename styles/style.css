@@ -46,9 +46,9 @@ html, body{
   iframe {
     margin: 0 auto;
     display:block;
-    width: 95%;
+    width: 50%;
     min-height: 95%;
-    padding: 2%;
+    padding: 1%;
     border: none;
   }
 
@@ -285,10 +285,11 @@ html, body{
   
   .topnav{
     text-align: center;
-    color: var(--nav-color) !important;;
+    /*color: var(--nav-color) !important;;*/
     position: sticky;
     top: 0;
-
+    background-color: #2E365A; 
+    border-bottom: 1vw solid yellow;
   }
 
   .topnavspacing{
