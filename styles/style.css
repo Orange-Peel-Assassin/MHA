@@ -135,7 +135,7 @@ html, body{
     -ms-transform: scale(0.95);
     transform: scale(0.95);
   }
-  
+
   input[type=text], input[type=password] {
     background-color: #f6f6f6;
     border: none;

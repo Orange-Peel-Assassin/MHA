@@ -16,17 +16,18 @@
 }
 
 .info-row-header{
-    flex-basis: 75px;
+    flex-basis: 40%;
 }
 
 .info-row p li{
-    margin: 1%;
+    margin: 1;
 }
 
 /* ids # */
 #info-box{
     border: 2px solid black;
-    width: 30%;
+    width: 25%;
     position: sticky;
+    right: 0;
     
 }
