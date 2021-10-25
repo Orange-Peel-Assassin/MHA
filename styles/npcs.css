@@ -23,11 +23,28 @@
     margin: 1;
 }
 
+.row {
+    display: flex;
+  }
+  
+.info-box-text{
+width: 100%;
+}
 /* ids # */
 #info-box{
     border: 2px solid black;
-    width: 25%;
+}
+
+#column-info-box {
+    flex: 25%;
+    padding: 10px;
+    height: 98%;
+    overflow-y: scroll;
     position: sticky;
-    right: 0;
-    
+    top: 25%;
+}
+
+#column-body-stuff {
+    flex: 75%;
+    padding: 10px;
 }
