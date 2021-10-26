@@ -45,6 +45,11 @@ width: 100%;
     top: 25%;
 }
 
+#info-box-img {
+    height: 100%;
+    width: 100%;
+}
+
 #column-body-stuff {
     flex: 75%;
     padding: 10px;

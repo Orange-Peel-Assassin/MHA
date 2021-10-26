@@ -17,7 +17,8 @@ $(document).ready(function() {
                 let pclink = $("<a/>")
                     .attr("href", `?name=${c.title}`)
                     .text(c.title);
-                pcList.append($("<li/>").html(pclink));
+                pcList.append($("<li/>")
+                    .html(pclink));
             });
         }
         else{
@@ -48,4 +49,11 @@ function ShowCharInfo(char){
             .text(c));
     });
     $("#info-box-player").text(char.player);
+    if (character["photo"] === null){
+        $("#info-box-img").attr("src", `../../SVG/MHA-discord-seeklogo.svg`);
+    }
+    else{
+        $("#info-box-img").attr("src", `${char.photo}`);
+    }
+
 }
