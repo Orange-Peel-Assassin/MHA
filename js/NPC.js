@@ -33,9 +33,19 @@ $(document).ready(function() {
 function ShowCharInfo(char){
     $("#info-box-title").text(char.title);
     $("#info-box-name").text(char.name);
-    // $("#info-box-alias").text(char.);
+    let aliasArray = character["alias"].split(",");
+    aliasArray.forEach(c => {
+        $("#info-box-alias")
+            .append($("<li/>")
+            .text(c));
+    });
     $("#info-box-pronouns").text(char.pronouns);
     $("#info-box-quirk").text(char.quirk);
-    // $("#info-box-affiliation").text(char.);
+    let affArr = character["affiliation"].split(",");
+    affArr.forEach(c => {
+        $("#info-box-affiliation")
+            .append($("<li/>")
+            .text(c));
+    });
     $("#info-box-player").text(char.player);
 }
