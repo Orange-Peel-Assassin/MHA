@@ -1,13 +1,41 @@
-var character = null;
+var character = null; 
 
 $(document).ready(function() {
+    LoadChars();
     const params = new URLSearchParams(window.location.search);
-    character = params.get("name");
-    if (character === null){
-        $("#npc-page").hide();
-    }
-    else{
-        $("#npc-home-page").hide();
-    }
+    var name = params.get("name");
 
+    Promise.all([
+        d3.csv("../../Raw Chars/AllChars.csv")
+    ]).then(([parsedCharacters]) => {
+        characters = parsedCharacters;
+        if (name === null){
+            $("#npc-page").hide();
+
+            let pcList = $("#pc-list");
+            characters.forEach(c => {
+                let pclink = $("<a/>")
+                    .attr("href", `?name=${c.title}`)
+                    .text(c.title);
+                pcList.append($("<li/>").html(pclink));
+            });
+        }
+        else{
+            name = name.toLowerCase();
+            character = characters.find(c => c.title.toLowerCase() === name);
+            ShowCharInfo(character);
+            $("#npc-page").show();
+            $("#npc-home-page").hide();
+        }
+    });
 });
+
+function ShowCharInfo(char){
+    $("#info-box-title").text(char.title);
+    $("#info-box-name").text(char.name);
+    // $("#info-box-alias").text(char.);
+    $("#info-box-pronouns").text(char.pronouns);
+    $("#info-box-quirk").text(char.quirk);
+    // $("#info-box-affiliation").text(char.);
+    $("#info-box-player").text(char.player);
+}

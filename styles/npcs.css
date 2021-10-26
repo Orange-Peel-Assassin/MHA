@@ -17,6 +17,7 @@
 
 .info-row-header{
     flex-basis: 40%;
+    padding: 1%;
 }
 
 .info-row p li{

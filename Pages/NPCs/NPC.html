@@ -47,7 +47,7 @@
                 <a class="topnavspacing" href="../../index.html" >
                     <img src="..\..\SVG\my-hero-academia-logo.svg" width="65%">
                 </a>
-                <a class="topnavspacing" href="../../Pages/ BaementProgeramer.html"> Baement Progeramer</a> 
+                <a class="topnavspacing" href="../../Pages/BasementProgeramer.html">Basement Progeramer</a> 
                 <a Class="topnavspacing" href="../../Pages/MissingInfo.html">Missing info</a>
                 <input Class="SearchBar" type="text" placeholder="Search.. (Not Working At The Moment)">
             </div>
@@ -73,19 +73,19 @@
                 <div class="Header">
                     <h2>PCs</h2>
                 </div>
-                    <Ul> 
-                        <li>
-                            <a href="NPC.html">May Eros</a>
-                        </li>
+                    <Ul id="pc-list"> 
                     </Ul>
                 <div class="Header">
                     <h2>NPCs</h2>
+                    <ul id="npc-list"> 
+
+                    </ul>
                 </div>
             </div>
         </div>
 
 
-<div id="npc-page">
+<div id="npc-page" style="display: none;">
 
 <!--Page-->
 <div class="row">
@@ -137,38 +137,38 @@
 
     <div id="column-info-box">
         <div id="info-box">
-            <h3 class="info-box-spliter">Title</h3>
+            <h3 class="info-box-spliter" id="info-box-title">Title</h3>
             <img src="../../SVG/MHA-discord-seeklogo.svg">
             <h4 class="info-box-spliter">Infomation</h4>
             <div class="info-row">
                 <P class="info-row-header">Name</p>
-                <p>Name</p>
+                <p id="info-box-name">Name</p>
             </div>
             <div class="info-row">
                 <p class="info-row-header">Alias</p>
-                <ul>
+                <ul id="info-box-alias">
                     <li>Alias 1</li>
                     <li>Alias 2</li>
                 </ul>
             </div>
             <div class="info-row">
                 <p class="info-row-header">Pronouns</p>
-                <p>Pronouns</p>
+                <p id="info-box-pronouns">Pronouns</p>
             </div>            
             <div class="info-row">
                 <p class="info-row-header">Quirk</p>
-                <p>Quirk Name</p>
+                <p id="info-box-quirk">Quirk Name</p>
             </div>
             <div class="info-row">
                 <p class="info-row-header">Affiliation</p>
-                <ul>
+                <ul id="info-box-affiliation">
                     <li>Affiliation 1</li>
                     <li>Affiliation 2</li>
                 </ul>
             </div>
             <div class="info-row">
                 <p class="info-row-header">Player</p>
-                <p>Player Name</p>
+                <p id="info-box-player">Player Name</p>
             </div>            
         </div>
     </div>
@@ -177,6 +177,7 @@
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../../js/CharLoad.js"></script>
 <script src="../../js/NPC.js"></script>
 </body>
 </html>
