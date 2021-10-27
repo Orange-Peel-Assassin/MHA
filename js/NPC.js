@@ -8,6 +8,10 @@ $(document).ready(function() {
     Promise.all([
         d3.csv("../../Raw Chars/AllChars.csv", (row) => {
             row.group = (row.player === "GM")? "NPC": "PC";
+            row.alias = row.alias.split(",");
+            row.affiliation = row.affiliation.split(",");
+            row.notes = row.notes.split(",");
+            row.skills = row.skills.split(",");
             return row;
         })
     ]).then(([parsedCharacters]) => {
@@ -20,8 +24,10 @@ $(document).ready(function() {
 
             let charUl = $("<ul/>");
             charGroup.append(charUl);
-                v.forEach(playerChar => {
-                    charUl.append($(`<li><a href="?name=${playerChar.title}">${playerChar.title}</a></li>`));
+                v.map(playerChar => playerChar.title)
+                    .sort()
+                    .forEach(title => {
+                        charUl.append($(`<li><a href="?name=${title}">${title}</a></li>`));
                 });
             charListDiv.append(charGroup);
         });
@@ -50,16 +56,14 @@ $(document).ready(function() {
 function ShowCharInfo(char){
     $("#info-box-title").text(char.title);
     $("#info-box-name").text(char.name);
-    let aliasArray = character["alias"].split(",");
-    aliasArray.forEach(c => {
+    character.alias.forEach(c => {
         $("#info-box-alias")
             .append($("<li/>")
             .text(c));
     });
     $("#info-box-pronouns").text(char.pronouns);
     $("#info-box-quirk").text(char.quirk);
-    let affArr = character["affiliation"].split(",");
-    affArr.forEach(c => {
+    character.affiliation.forEach(c => {
         $("#info-box-affiliation")
             .append($("<li/>")
             .text(c));
@@ -72,8 +76,12 @@ function ShowCharInfo(char){
     $("#page-appearance").text(char.appearance);
     $("#page-quirk").text(char.quirkInfo);
     $("#page-backround").text(char.backround);
-    let noteArray = character["notes"].split(",");
-    noteArray.forEach(c => {
+    character.skills.forEach(c => {
+        $("#page-skills")
+            .append($("<li/>")
+            .text(c));
+    });
+    character.notes.forEach(c => {
         $("#page-notes")
             .append($("<li/>")
             .text(c));
