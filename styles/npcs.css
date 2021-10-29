@@ -2,6 +2,10 @@
 
 /* tags <> */
 
+li {
+    padding: 3px;
+}
+
 /* classes . */
 .info-box-spliter{
     text-align: center;
