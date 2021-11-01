@@ -315,7 +315,7 @@ html, body{
     height: 95%;
   }
 
-  #divbriframe{
+  .divbriframe{
     display: flex;
     height: 95%;
   }
