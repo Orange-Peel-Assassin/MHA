@@ -44,7 +44,6 @@ html, body{
   /* STRUCTURE */
   
   iframe {
-    margin: 0 auto;
     display:block;
     width: 50%;
     min-height: 95%;
@@ -311,7 +310,15 @@ html, body{
     border: none;
     background-color: wheat;
   }
+  .brifrman{
+    flex: 50%;
+    height: 95%;
+  }
 
+  #divbriframe{
+    display: flex;
+    height: 95%;
+  }
   /* OTHERS */
   
   *:focus {
