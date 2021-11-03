@@ -1,4 +1,5 @@
 var character = null; 
+var lineBrake = "<br>";
 
 $(document).ready(function() {
     LoadChars();

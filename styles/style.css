@@ -45,8 +45,8 @@ html, body{
   
   iframe {
     display:block;
-    width: 50%;
     min-height: 95%;
+    width: 98%;
     padding: 1%;
     border: none;
   }
@@ -312,6 +312,7 @@ html, body{
   }
   .brifrman{
     flex: 50%;
+    width: 50%;
     height: 95%;
   }
 
@@ -331,4 +332,9 @@ html, body{
 
   .Header{
     border-bottom: #0d0d0d 1%;
+  }
+
+  .gforms{
+    width: 98% !important;
+    height: 98% !important;
   }
