@@ -45,7 +45,6 @@ html, body{
   
   iframe {
     display:block;
-    min-height: 95%;
     width: 98%;
     padding: 1%;
     border: none;
@@ -334,7 +333,7 @@ html, body{
     border-bottom: #0d0d0d 1%;
   }
 
-  .gforms{
-    width: 98% !important;
-    height: 98% !important;
+  .icon-link{
+    width: 25%;
+    height: 25%;
   }
