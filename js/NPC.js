@@ -1,5 +1,4 @@
-var character = null; 
-var lineBrake = "<br>";
+var character = null;
 
 $(document).ready(function() {
     LoadChars();
@@ -8,7 +7,8 @@ $(document).ready(function() {
 
     Promise.all([
         d3.csv("../../Raw Chars/AllChars.csv", (row) => {
-            row.group = (row.player === "GM")? "NPC": "PC";
+            row.player = row.player.split(",");
+            row.group = (row.player[0] === "GM")? "NPC": "PC";
             row.alias = row.alias.split(",");
             row.affiliation = row.affiliation.split(",");
             row.notes = row.notes.split(",");
@@ -67,25 +67,29 @@ function ShowCharInfo(char){
     character.affiliation.forEach(c => {
         $("#info-box-affiliation")
             .append($("<li/>")
-            .text(c));
+            .html(c));
     });
-    $("#info-box-player").text(char.player);
+    character.player.forEach(c => {
+        $("#info-box-player")
+            .append($("<li/>")
+            .html(c));
+    });
     $("#info-box-img").attr("src",
         character.photo === ""? 
             "../../SVG/MHA-discord-seeklogo.svg":
             `${char.photo}` );
-    $("#page-appearance").text(char.appearance);
-    $("#page-quirk").text(char.quirkInfo);
-    $("#page-backround").text(char.backround);
+    $("#page-appearance").html(char.appearance);
+    $("#page-quirk").html(char.quirkInfo);
+    $("#page-backround").html(char.backround);
     character.skills.forEach(c => {
         $("#page-skills")
             .append($("<li/>")
-            .text(c));
+            .html(c));
     });
     character.notes.forEach(c => {
         $("#page-notes")
             .append($("<li/>")
-            .text(c));
+            .html(c));
     });
 
 }
