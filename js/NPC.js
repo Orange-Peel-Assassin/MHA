@@ -67,25 +67,25 @@ function ShowCharInfo(char){
     character.affiliation.forEach(c => {
         $("#info-box-affiliation")
             .append($("<li/>")
-            .text(c));
+            .html(c));
     });
     $("#info-box-player").text(char.player);
     $("#info-box-img").attr("src",
         character.photo === ""? 
             "../../SVG/MHA-discord-seeklogo.svg":
             `${char.photo}` );
-    $("#page-appearance").text(char.appearance);
-    $("#page-quirk").text(char.quirkInfo);
-    $("#page-backround").text(char.backround);
+    $("#page-appearance").html(char.appearance);
+    $("#page-quirk").html(char.quirkInfo);
+    $("#page-backround").html(char.backround);
     character.skills.forEach(c => {
         $("#page-skills")
             .append($("<li/>")
-            .text(c));
+            .html(c));
     });
     character.notes.forEach(c => {
         $("#page-notes")
             .append($("<li/>")
-            .text(c));
+            .html(c));
     });
 
 }
