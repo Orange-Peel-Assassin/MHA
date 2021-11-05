@@ -8,7 +8,7 @@ $(document).ready(function() {
     Promise.all([
         d3.csv("../../Raw Chars/AllChars.csv", (row) => {
             row.player = row.player.split(",");
-            row.group = (row.player[0] === "GM")? "NPC": "PC";
+            row.group = (row.player[0] === "GM")? "NPC": "PC"; //GM will always be 0 if the list if the gm is in control
             row.alias = row.alias.split(",");
             row.affiliation = row.affiliation.split(",");
             row.notes = row.notes.split(",");
@@ -17,20 +17,25 @@ $(document).ready(function() {
         })
     ]).then(([parsedCharacters]) => {
         characters = parsedCharacters;
-        charByPlayer = d3.group(characters, d => d.group);
+        charByPlayer = d3.group(characters, d => d.group,d => d.affiliation[0]); //the first [0] affiliation will be the strongest
         let charListDiv = $("#char-lists");
-        charByPlayer.forEach((v, k) => {
+        charByPlayer.forEach((factionMap, ControllingEntity) => {
             let charGroup = $("<div/>");
-            charGroup.append($(`<h2>${k}</h2>`));
-
-            let charUl = $("<ul/>");
-            charGroup.append(charUl);
-                v.map(playerChar => playerChar.title)
-                    .sort()
-                    .forEach(title => {
-                        charUl.append($(`<li><a href="?name=${title}">${title}</a></li>`));
-                });
+            charGroup.append($(`<h2>${ControllingEntity}</h2>`));
+                
+            factionMap.forEach((charList, faction) => {
+                let charUl = $(`<ul><h2>${faction}</h2></ul>`);
+                charGroup.append(charUl);
+                    charList.map(playerChar => playerChar.title)
+                        .sort()
+                        .forEach(title => {
+                            charUl.append($(`<li><a href="?name=${title}">${title}</a></li>`));
+                    });
             charListDiv.append(charGroup);
+            });
+
+
+           
         });
 
         if (name === null){
