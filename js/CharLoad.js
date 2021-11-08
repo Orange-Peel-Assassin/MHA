@@ -1,11 +1,5 @@
 var characters
 
-$(document).keypress(function(e){
-    if (e.which == 13){
-        $("#searchButton").click();
-    }
-});
-
 function LoadChars() {
    /* Promise.all([
         d3.csv("../../Raw Chars/AllChars.csv")
@@ -14,10 +8,3 @@ function LoadChars() {
     }); */
 }
 
-function result() {
-    var searchedName = document.getElementById("txtInput").value;
-        if (searchedName !== ""){
-            console.log(`${searchedName}`);
-             window.location.href = `?name=${searchedName}`;
-        };
- }
