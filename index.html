@@ -8,8 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/style.css">
         <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script-->
-        <script type="text/javascript" src="js/AllPages"></script>
-        <script type="text/javascript" src="js/HomePage"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/AllPages.js"></script>
+        
     </head>
     <body>
         <script src="" async defer></script>
@@ -24,15 +26,16 @@
             -->
             <nav class="topnav">
                 <div style="align-content: center;">
-                
+                    
                     <a class="topnavspacing" href="Pages/AboutRPG.html">About the RPG</a>
                     <a class="topnavspacing" href="Pages/AboutMHA.html">About MHA</a>
-                    <a class="topnavspacing" href="index.html">
+                    <a class="topnavspacing" href="index.html" >
                         <img src="SVG\my-hero-academia-logo.svg" width="65%">
                     </a>
                     <a class="topnavspacing" href="Pages/BasementProgeramer.html">Basement Programmer</a> 
                     <a Class="topnavspacing" href="Pages/MissingInfo.html">Missing Info</a>
-                    <input Class="SearchBar" type="text" placeholder="Search.. (Not Working At The Moment)">
+                    <input Class="SearchBar" type="text" name="Search" id="txtInput" placeholder="Search..">
+                    <button id="searchButton" type="button" onclick="result();">Search</button>
                 </div>
             </nav>
             
@@ -56,6 +59,9 @@
 
             
         </div>
+        <p class="erosClass">
+            Welcome Back Mr. Moon
+        </p>
         <p>
             This is the home page
         </p>

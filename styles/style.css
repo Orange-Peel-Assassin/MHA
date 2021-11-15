@@ -286,7 +286,7 @@ html, body{
     /*color: var(--nav-color) !important;;*/
     position: sticky;
     top: 0;
-    background-color: #2E365A; 
+    background-color: var(--bg-color); 
     border-bottom: 1vw solid yellow;
     z-index: 2;
   }
@@ -336,4 +336,8 @@ html, body{
   .icon-link{
     width: 25%;
     height: 25%;
+  }
+
+  .erosClass{
+    display: none;
   }

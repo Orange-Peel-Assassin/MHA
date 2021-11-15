@@ -56,6 +56,7 @@ $(document).ready(function() {
             $("#npc-page").show();
             $("#npc-home-page").hide();
         }
+        erosFunction();
     });
 });
 
@@ -68,7 +69,7 @@ function ShowCharInfo(char){
             .text(c));
     });
     $("#info-box-pronouns").text(char.pronouns);
-    $("#info-box-quirk").text(char.quirk);
+    $("#info-box-quirk").html(char.quirk);
     character.affiliation.forEach(c => {
         $("#info-box-affiliation")
             .append($("<li/>")
