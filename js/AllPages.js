@@ -25,12 +25,16 @@ $(document).ready(function() {
     erosFunction();
 });
 
+
+//enter also acts like a click on the search Button
 $(document).keypress(function(e){
     if (e.which == 13){
         $("#searchButton").click();
     }
 });
 
+
+//the actual search 
 function result() {
     var searchedName = document.getElementById("txtInput").value;
         if (searchedName === "erosKey") {
@@ -39,6 +43,6 @@ function result() {
         }
         else if (searchedName !== ""){
             console.log(`${searchedName}`);
-             window.location.href = `NPCs/NPC.html?name=${searchedName}`;
+            window.location.href = `NPCs/NPC.html?name=${searchedName}`;
         };
  }

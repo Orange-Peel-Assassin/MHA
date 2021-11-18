@@ -61,14 +61,14 @@ $(document).ready(function() {
 });
 
 function ShowCharInfo(char){
-    $("#info-box-title").text(char.title);
-    $("#info-box-name").text(char.name);
+    $("#info-box-title").html(char.title);
+    $("#info-box-name").html(char.name);
     character.alias.forEach(c => {
         $("#info-box-alias")
             .append($("<li/>")
-            .text(c));
+            .html(c));
     });
-    $("#info-box-pronouns").text(char.pronouns);
+    $("#info-box-pronouns").html(char.pronouns);
     $("#info-box-quirk").html(char.quirk);
     character.affiliation.forEach(c => {
         $("#info-box-affiliation")
@@ -80,10 +80,20 @@ function ShowCharInfo(char){
             .append($("<li/>")
             .html(c));
     });
-    $("#info-box-img").attr("src",
-        character.photo === ""? 
-            "../../SVG/MHA-discord-seeklogo.svg":
-            `${char.photo}` );
+    // $("#info-box-img").attr("src",
+    //     character.photo === ""? 
+    //         "../../SVG/MHA-discord-seeklogo.svg":
+    //         `${char.photo}` );
+    if (localStorage.getItem("erosKey") === "true" && (character.photoEros != "")) {
+        var srcVar = `${char.photoEros}`
+    }
+    else if (character.photo === "") {
+        var srcVar = "../../SVG/MHA-discord-seeklogo.svg"
+    } 
+    else {
+        var srcVar = `${char.photo}`
+    }
+    $("#info-box-img").attr("src",srcVar)
     $("#page-appearance").html(char.appearance);
     $("#page-quirk").html(char.quirkInfo);
     $("#page-backround").html(char.backround);
@@ -98,4 +108,10 @@ function ShowCharInfo(char){
             .html(c));
     });
 
+}
+
+
+
+function searchedFunction() {
+    data.filter(function(d){ return d.name == "toto" })
 }
