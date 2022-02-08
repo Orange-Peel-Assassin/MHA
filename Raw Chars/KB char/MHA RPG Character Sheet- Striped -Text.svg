@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2550" height="3300" viewBox="0 0 2550 3300">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 83.333px;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-5, .cls-6 {
+        fill: #a60a0e;
+        text-anchor: middle;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        font-family: "Franklin Gothic Medium";
+      }
+
+      .cls-2 {
+        font-size: 50px;
+      }
+
+      .cls-3 {
+        font-size: 45.833px;
+        fill: #fcfcfd;
+      }
+
+      .cls-4 {
+        font-size: 62.5px;
+      }
+
+      .cls-5 {
+        font-size: 58.333px;
+      }
+
+      .cls-6 {
+        font-size: 87.5px;
+      }
+    </style>
+  </defs>
+  <text id="Stats" class="cls-1" transform="translate(2159.261 1045.951)"><tspan x="0">FooS1</tspan><tspan x="0" dy="100">FooS2</tspan><tspan x="0" dy="100">FooS3</tspan><tspan x="0" dy="100">FooS4</tspan><tspan x="0" dy="100">FooS5</tspan><tspan x="0" dy="100">FooS6</tspan><tspan x="0" dy="100">FooS7</tspan><tspan x="0" dy="100">FooS8</tspan></text>
+  <text id="Equipment" class="cls-2" transform="translate(1430.736 2694.909)"><tspan x="0">FooEquipment</tspan></text>
+  <text id="QuirkType" class="cls-3" transform="translate(1480.831 534.999)">, Transformatin hypbrid</text>
+  <text id="Class" class="cls-4" transform="translate(2057.365 578.998)"><tspan x="0">FooClass</tspan></text>
+  <text id="Quirk" class="cls-5" transform="translate(1292.868 615.724)"><tspan x="0">FooQuirk</tspan></text>
+  <text id="Age" class="cls-6" transform="matrix(1.139, 0, 0, 1.139, 485, 872.299)"><tspan x="0">FooAge</tspan></text>
+  <text id="Name" class="cls-6" transform="translate(485 617.724) scale(1.156 1.156)"><tspan x="0">FooName</tspan></text>
+  <text id="Blood" class="cls-6" transform="translate(485 1372.361) scale(1.156 1.156)"><tspan x="0">FooBlood</tspan></text>
+  <text id="Backround" class="cls-2" transform="translate(485 1632.437)"><tspan x="0">FooBackround</tspan></text>
+</svg>

@@ -1,23 +1,7 @@
-var character = null;
-
 $(document).ready(function() {
-    LoadChars();
-    const params = new URLSearchParams(window.location.search);
-    var name = params.get("name");
+    let name = getChar();
 
-    Promise.all([
-        d3.csv("../../Raw Chars/AllChars.csv", (row) => {
-            row.player = row.player.split(",");
-            row.group = (row.player[0] === "GM")? "NPC": "PC"; //GM will always be 0 if the list if the gm is in control
-            row.alias = row.alias.split(",");
-            row.affiliation = row.affiliation.split(",");
-            row.notes = row.notes.split(",");
-            row.skills = row.skills.split(",");
-            return row;
-        })
-    ]).then(([parsedCharacters]) => {
-        characters = parsedCharacters;
-        charByPlayer = d3.group(characters, d => d.group,d => d.affiliation[0]); //the first [0] affiliation will be the strongest
+    loadCsv().then(() => {
         let charListDiv = $("#char-lists");
         charByPlayer.forEach((factionMap, ControllingEntity) => {
             let charGroup = $("<div/>");
@@ -33,9 +17,6 @@ $(document).ready(function() {
                     });
             charListDiv.append(charGroup);
             });
-
-
-           
         });
 
         if (name === null){
@@ -80,20 +61,13 @@ function ShowCharInfo(char){
             .append($("<li/>")
             .html(c));
     });
+    $("#info-box-charSheet").html($(`<a href="CharSheet.html?name=${char.title}">${char.title}</a>`));
+
     // $("#info-box-img").attr("src",
     //     character.photo === ""? 
     //         "../../SVG/MHA-discord-seeklogo.svg":
     //         `${char.photo}` );
-    if (localStorage.getItem("erosKey") === "true" && (character.photoEros != "")) {
-        var srcVar = `${char.photoEros}`
-    }
-    else if (character.photo === "") {
-        var srcVar = "../../SVG/MHA-discord-seeklogo.svg"
-    } 
-    else {
-        var srcVar = `${char.photo}`
-    }
-    $("#info-box-img").attr("src",srcVar)
+    PhotoToHTML("info-box-img", char);
     $("#page-appearance").html(char.appearance);
     $("#page-quirk").html(char.quirkInfo);
     $("#page-backround").html(char.backround);

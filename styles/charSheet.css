@@ -1,0 +1,113 @@
+
+/* ALL */
+html{
+  font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif; 
+}
+
+#viewport {
+    width: 95vh;
+    height: 90vh;
+  }
+
+.under {
+    position: absolute;
+    z-index: 1;
+    height: 95vh;
+}
+
+.over {
+  position: absolute;
+  z-index: 2;
+  height: 95vh;
+}
+
+
+/* column 1 */
+
+#column-1{
+  text-align: center;
+  position: relative;
+  left: 3vh;
+  width: 21vh;
+  top: 15.5vh;
+}
+
+#charSheet-age{
+  padding-top: 2.5vh;
+}
+
+#charSheet-alias{
+  padding-top: 2.6vh;
+}
+
+#charSheet-blood{
+  padding-top: 2.5vh;
+  padding-bottom: 3vh;
+}
+
+#charSheet-backround{
+  padding-top: 3vh;
+  font-size: 80%;
+  height: 15vh;
+  overflow-y: scroll;
+  width: 23vh;
+
+}
+
+/* column 2 */
+
+#column-2{
+  position: relative;
+  top: -37vh;
+  left: 28vh;
+  width: 20vh;
+}
+
+#charSheet-quirkType{
+  position: relative;
+  right: 2vh;
+  text-align: right;
+  font-size: 60%;
+}
+
+#charSheet-quirk{
+  font-size: 80%;
+  height: 22vh;
+  overflow-y: scroll;
+}
+
+#charSheet-photo-box{
+  padding-top: 6vh;
+  width: 20vh;
+  height: 18vh;
+  display: flex;
+  justify-content: center;
+}
+
+#charSheet-equipment{
+  position: relative;
+  top: -29vh;
+  left: 28vh;
+  padding-top: 2vh;
+  padding-left: 4vh;
+  height: 2vh;
+  width: 34vh;
+}
+
+/* column 3 */
+
+#column-3{
+  text-align: center;
+  position: relative;
+  left: 39vh;
+  top: -95.5vh;
+}
+
+#charSheet-Stat-All {
+  position: relative;
+  top: 8vh;
+}
+
+.charSheet-Stat {
+  padding: 0.7vh;
+}
