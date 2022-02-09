@@ -32,17 +32,24 @@ html{
   top: 15.5vh;
 }
 
+#charSheet-name{
+  height: 2.5vh;
+}
+
 #charSheet-age{
   padding-top: 2.5vh;
+  height: 2.5vh;
 }
 
 #charSheet-alias{
   padding-top: 2.6vh;
+  height: 2.5vh;
 }
 
 #charSheet-blood{
   padding-top: 2.5vh;
   padding-bottom: 3vh;
+  height: 2.5vh;
 }
 
 #charSheet-backround{
@@ -77,7 +84,7 @@ html{
 }
 
 #charSheet-photo-box{
-  padding-top: 6vh;
+  padding-top: 5.5vh;
   width: 20vh;
   height: 18vh;
   display: flex;
@@ -100,7 +107,7 @@ html{
   text-align: center;
   position: relative;
   left: 39vh;
-  top: -95.5vh;
+  top: -94.5vh;
 }
 
 #charSheet-Stat-All {
@@ -109,5 +116,5 @@ html{
 }
 
 .charSheet-Stat {
-  padding: 0.7vh;
+  padding: 0.75vh;
 }
