@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    let name = getChar();
+    let urlname = getURLName();
 
     loadCsv().then(() => {
         let charListDiv = $("#char-lists");
@@ -19,7 +19,7 @@ $(document).ready(function() {
             });
         });
 
-        if (name === null){
+        if (urlname === null){
             $("#npc-page").hide();
                 let pcList = $("#pc-list");
             /*characters.forEach(c => {
@@ -31,8 +31,8 @@ $(document).ready(function() {
             });*/
         }
         else{
-            name = name.toLowerCase();
-            character = characters.find(c => c.title.toLowerCase() === name);
+            urlname = urlname.toLowerCase();
+            character = characters.find(c => c.title.toLowerCase() === urlname);
             ShowCharInfo(character);
             $("#npc-page").show();
             $("#npc-home-page").hide();
@@ -87,5 +87,5 @@ function ShowCharInfo(char){
 
 
 function searchedFunction() {
-    data.filter(function(d){ return d.name == "toto" })
+    data.filter(function(d){ return d.name == "todo" })
 }

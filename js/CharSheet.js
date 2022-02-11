@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    let name = getChar();
+    let name = getURLName();
     loadCsv().then(() => {
         name = name.toLowerCase();
         character = characters.find(c => c.title.toLowerCase() === name);

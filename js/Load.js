@@ -1,7 +1,9 @@
 var characters
 var character = null;
+var weapons
+var weapon = null;
 
-function getChar() {
+function getURLName() {
     const params = new URLSearchParams(window.location.search);
     return params.get("name");
    /* Promise.all([
@@ -30,10 +32,10 @@ async function loadCsv() {
 
 
 function PhotoToHTML(r, char) {
-    if (localStorage.getItem("erosKey") === "true" && (character.photoEros != "")) {
+    if (localStorage.getItem("erosKey") === "true" && (char.photoEros != "")) {
         var srcVar = `${char.photoEros}`
     }
-    else if (character.photo === "") {
+    else if (char.photo === "") {
         var srcVar = "../../SVG/MHA-discord-seeklogo.svg"
     } 
     else {
@@ -41,3 +43,20 @@ function PhotoToHTML(r, char) {
     }
     $(`#${r}`).attr("src",srcVar)
  }
+
+
+//  weapons
+
+
+async function loadCsvWep() {
+    const [parsedWeapons] = await Promise.all([
+        d3.csv("../../Weapons/AllWeapons.csv", (row) => {
+            row.type = row.type.split(",");
+            row.notes = row.notes.split(",");
+            return row;
+        })
+    ]);
+    weapons = parsedWeapons;
+    wepByType = d3.group(weapons, d => d.group, d_1 => d_1.type[0]); //the first [0] type will be the strongest
+}
+

@@ -14,31 +14,6 @@
         <link rel="stylesheet" href="../../styles/npcs.css">
     </head>
     <body>
-        <!--
-            Navbar
-
-            info box
-                name
-                pitur
-                    Title
-					infomation      ""
-                    name            ""
-                    alias           ""
-                    Pronouns        ""
-                    Quirk           ""
-                    Affiliation     ""
-                    Player          ""
-
-
-            appearance (Looks)
-                ""
-            Quirk
-                ""
-            backround
-                ""
-            notes
-                ""
-        -->
         <nav class="topnav">
             <div style="align-content: center;">
                 
@@ -54,23 +29,16 @@
             </div>
         </nav>
 
-        <div id="npc-home-page">
+        <div id="weapon-home-page">
             <!--Page-->
             <div class="Header">
-                <h2>What are NPCs?</h2>
+                <h2>What are weapons?</h2>
             </div>
             <p>
-                For all intents and purposes NPCs are characters. If a character is controlled by the GM, then they are NPCs or non-player-characters. If a player controls the character, then it’s a PC or player-character. 
-            </p>
-            <p style="color: red !important;"> 
-                For simplicity PCs will be treated as NPCs.
-            </p>
-            <p>
-                If the GM controls the character, then it will be listed as “GM” otherwise, players initials will be listed in the info box.
+                Weapons are owie tools. 
             </p>
     
-    
-            <div id="char-lists" style="margin: 1%;">
+            <div id="wep-lists" style="margin: 1%;">
                 
             </div>
             <br>
@@ -78,7 +46,7 @@
         </div>
 
 
-<div id="npc-page" style="display: none;">
+<div id="wep-page" style="display: none;">
 
 <!--Page-->
 <div class="row">
@@ -91,27 +59,6 @@
         <p class="info-box-text" id="page-appearance">
             
         </p>
-        <div class="Header">
-            <h2>Quirk</h2>
-            <hr>
-        </div>
-        <p class="info-box-text" id="page-quirk">
-            
-        </p>
-        <div class="Header">
-            <h2>Backround</h2>
-            <hr>
-        </div>
-        <p class="info-box-text" id="page-backround">
-            
-        </p>
-        <div class="Header">
-            <h2>Skills</h2>
-            <hr>
-            <ul id="page-skills">
-                
-            </ul>
-        </div>
         <div class="Header">
             <h2>Notes</h2>
             <hr>
@@ -137,31 +84,10 @@
                 <p id="info-box-name">Name</p>
             </div>
             <div class="info-row">
-                <p class="info-row-header">Alias</p>
-                <ul id="info-box-alias">
+                <p class="info-row-header">Type</p>
+                <ul id="info-box-type">
                 </ul>
-            </div>
-            <div class="info-row">
-                <p class="info-row-header">Pronouns</p>
-                <p id="info-box-pronouns">Pronouns</p>
-            </div>            
-            <div class="info-row">
-                <p class="info-row-header">Quirk</p>
-                <p id="info-box-quirk">Quirk Name</p>
-            </div>
-            <div class="info-row">
-                <p class="info-row-header">Affiliation</p>
-                <ul id="info-box-affiliation">
-                </ul>
-            </div>
-            <div class="info-row">
-                <p class="info-row-header">Player</p>
-                <ul id="info-box-player"></ul>
-            </div> 
-            <div class="info-row">
-                <p class="info-row-header">Character Sheet</p>
-                <p id="info-box-charSheet">Char Sheet</p>
-            </div>           
+            </div>          
         </div>
     </div>
 </div>
@@ -171,6 +97,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="../../js/AllPages.js"></script>
 <script src="../../js/Load.js"></script>
-<script src="../../js/NPC.js"></script>
+<script src="../../js/Weapon.js"></script>
 </body>
 </html>
