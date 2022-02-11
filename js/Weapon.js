@@ -35,6 +35,7 @@ $(document).ready(function() {
             ShowWepInfo(weapon);
             $("#wep-page").show();
             $("#wep-home-page").hide();
+            $("#title-title").html(weapon.name);
         }
         erosFunction();
     });

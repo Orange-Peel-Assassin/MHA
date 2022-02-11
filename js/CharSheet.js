@@ -5,9 +5,11 @@ $(document).ready(function() {
         character = characters.find(c => c.title.toLowerCase() === name);
         if (character.name !== "N/A" && character.name !== null){
             $("#charSheet-name").html(character.name);
+            $("#title-title").html(`${character.name} Character Sheet`);
         }
         else{
             $("#charSheet-name").html(character.title);
+            $("#title-title").html(`${character.title} Character Sheet`);
         }
         $("#charSheet-backround").html(character.backround);
         $("#charSheet-blood").html(character.bloodType);

@@ -36,6 +36,7 @@ $(document).ready(function() {
             ShowCharInfo(character);
             $("#npc-page").show();
             $("#npc-home-page").hide();
+            $("#title-title").html(character.title);
         }
         erosFunction();
     });
