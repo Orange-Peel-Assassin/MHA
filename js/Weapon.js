@@ -5,7 +5,7 @@ $(document).ready(function() {
         let wepListDiv = $("#wep-lists");
         wepByType.forEach((typeMap, ControllingEntity) => {
             let wepGroup = $("<div/>");
-                
+            
             typeMap.forEach((wepList, type) => {
                 let wepUl = $(`<ul><h2>${type}</h2></ul>`);
                 wepGroup.append(wepUl);
@@ -31,7 +31,7 @@ $(document).ready(function() {
         }
         else{
             urlname = urlname.toLowerCase();
-            weapon = weapons.find(c => c.name.toLowerCase === urlname);
+            weapon = weapons.find(c => c.name.toLowerCase() === urlname);
             ShowWepInfo(weapon);
             $("#wep-page").show();
             $("#wep-home-page").hide();
@@ -43,12 +43,12 @@ $(document).ready(function() {
 
 function ShowWepInfo(wep){
     $("#info-box-name").html(wep.name);
-    weapon.type.forEach(c => {
+    wep.type.forEach(c => {
         $("#info-box-type")
             .append($("<li/>")
             .html(c));
     });
-    weapon.knownUsers.forEach(c => {
+    wep.knownUsers.forEach(c => {
         $("#info-box-knownUsers")
             .append($("<li/>")
             .html(c));
@@ -60,7 +60,7 @@ function ShowWepInfo(wep){
     //         `${char.photo}` );
     PhotoToHTML("info-box-img", wep);
     $("#page-appearance").html(wep.appearance);
-    weapon.notes.forEach(c => {
+    wep.notes.forEach(c => {
         $("#page-notes")
             .append($("<li/>")
             .html(c));
