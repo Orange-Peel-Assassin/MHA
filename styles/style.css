@@ -341,3 +341,7 @@ html, body{
   .erosClass{
     display: none;
   }
+
+  .adminShow{
+    display: none;
+  }

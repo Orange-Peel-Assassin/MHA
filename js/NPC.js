@@ -38,7 +38,6 @@ $(document).ready(function() {
             $("#npc-home-page").hide();
             $("#title-title").html(character.title);
         }
-        erosFunction();
     });
 });
 

@@ -20,7 +20,6 @@ $(document).ready(function() {
 
         if (urlname === null){
             $("#wep-page").hide();
-                let wList = $("#w-list");
             /*characters.forEach(c => {
                 let pclink = $("<a/>")
                     .attr("href", `?name=${c.title}`)
@@ -33,8 +32,8 @@ $(document).ready(function() {
             urlname = urlname.toLowerCase();
             weapon = weapons.find(c => c.name.toLowerCase() === urlname);
             ShowWepInfo(weapon);
-            $("#wep-page").show();
-            $("#wep-home-page").hide();
+            $("#weapon-page").show();
+            $("#weapon-home-page").hide();
             $("#title-title").html(weapon.name);
         }
         erosFunction();
@@ -42,18 +41,16 @@ $(document).ready(function() {
 });
 
 function ShowWepInfo(wep){
+    $("#info-box-title").html(wep.name);
     $("#info-box-name").html(wep.name);
     wep.type.forEach(c => {
         $("#info-box-type")
             .append($("<li/>")
             .html(c));
     });
-    wep.knownUsers.forEach(c => {
-        $("#info-box-knownUsers")
-            .append($("<li/>")
-            .html(c));
-    });
     
+
+   
     // $("#info-box-img").attr("src",
     //     character.photo === ""? 
     //         "../../SVG/MHA-discord-seeklogo.svg":

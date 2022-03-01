@@ -3,7 +3,7 @@
 
 
     // Create a function for setting a variable value
-    function myFunction_set() {
+    function ErosColor() {
       // Set the value of variable --blue to another value (in this case "lightblue")
       r.style.setProperty('--nav-color', '#470000');
       r.style.setProperty('--bg-color', '#850000');
@@ -13,16 +13,79 @@
     
     }
 
-    function erosFunction() {
+    function ErosCheck() {
         if (localStorage.getItem("erosKey") === "true") {
-            myFunction_set();
+            ErosColor();
             $(".erosClass").show();
             $(".erosHideClass").hide();
         };
     }
 
+    function ErosSet() {
+        localStorage.setItem("erosKey","true");
+        ErosCheck();
+    }
+
+
+
+    function DevColor() {
+        // Set the value of variable --blue to another value (in this case "lightblue")
+        r.style.setProperty('--nav-color', '#470047');
+        r.style.setProperty('--bg-color', '#850085');
+        r.style.setProperty('--secondary-color', '#d24dff');
+        r.style.setProperty('--thrid-color', '#d919ff');
+        r.style.setProperty('--font-color', '#e180ff');
+      
+      }
+  
+      function DevCheck() {
+          if (localStorage.getItem("devKey") === "true") {
+              DevColor();
+              $(".devClass").show();
+              $(".devHideClass").hide();
+          };
+      }
+  
+      function DevSet() {
+          localStorage.setItem("devKey","true");
+          DevCheck();
+      }
+
+      function ResetColor() {
+        // Set the value of variable --blue to another value (in this case "lightblue")
+        r.style.setProperty('--nav-color', '#0C143A');
+        r.style.setProperty('--bg-color', '#2E365A');
+        r.style.setProperty('--secondary-color', '#5897F2');
+        r.style.setProperty('--thrid-color', '#7283A6');
+        r.style.setProperty('--font-color', '#AAB9D0');
+      }
+
+      function ResetKeys() {
+          localStorage.setItem("devKey","false");
+          localStorage.setItem("erosKey","false");
+          ResetColor();
+          CheckKeys();
+      }
+
+      function CheckKeys() {
+        ErosCheck();
+        DevCheck();
+        if (localStorage.getItem("admin") === "true") {
+            $(".adminShow").show();
+        };
+      }
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function() {
-    erosFunction();
+    CheckKeys();
 });
 
 
@@ -37,12 +100,17 @@ $(document).keypress(function(e){
 //the actual search 
 function result() {
     var searchedName = document.getElementById("txtInput").value;
-        if (searchedName === "erosKey") {
-            localStorage.setItem("erosKey","true");
-            myFunction_set();
+        if (searchedName === "Admin") {
+            localStorage.setItem("admin","true");
+            CheckKeys();
         }
-        else if (searchedName !== ""){
+        else if (searchedName !== "" && window.location.href.indexOf("index") > -1){
+            console.log(`${searchedName}`);
+            window.location.href = `Pages/NPCs/NPC.html?name=${searchedName}`;
+        }
+        else if (searchedName !== "") {
             console.log(`${searchedName}`);
             window.location.href = `NPCs/NPC.html?name=${searchedName}`;
-        };
+        }
+        ;
  }
